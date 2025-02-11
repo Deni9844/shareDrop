@@ -1,0 +1,10 @@
+.expandable-icon-container {
+    overflow: hidden;
+    max-height: 2.1rem; 
+    transition: max-height 0.3s ease; 
+  }
+  
+  .expandable-icon-container:hover {
+    max-height: 100px;
+  }
+  
