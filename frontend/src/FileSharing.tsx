@@ -16,7 +16,7 @@ import { useToast } from "@/hooks/use-toast"
 
 import './FileSharing.css'
 
-const port = import.meta.env.VITE_PORT
+const port = import.meta.env.PORT
 
 const socket: Socket = io(`https://sharedrop-t1yn.onrender.com:${port}`, {
   transports: ['websocket'],  // Enforce WebSocket connection
