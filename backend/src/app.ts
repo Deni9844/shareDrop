@@ -1,6 +1,7 @@
 import express from 'express';
 import { createServer } from 'http';
 import { Server } from 'socket.io';
+import path from 'path';
 import { getPlatform } from './utils/functions.js';
 
 const app = express();
@@ -11,6 +12,15 @@ const io = new Server(httpServer, {
     },
     pingTimeout: 60000, // Set timeout to 60 seconds
     pingInterval: 25000, // Set interval to 25 seconds
+});
+
+//for production
+const _dirname = path.resolve();
+
+
+app.use(express.static(path.join(_dirname,"/dist")));
+app.get('*', (_,res) => {
+    res.sendFile(path.resolve(_dirname,"dist", "index.html"))
 });
 
 
