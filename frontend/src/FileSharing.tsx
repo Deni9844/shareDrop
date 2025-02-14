@@ -16,9 +16,7 @@ import { useToast } from "@/hooks/use-toast"
 
 import './FileSharing.css'
 
-const port = import.meta.env.PORT
-
-const socket: Socket = io(`https://sharedrop-t1yn.onrender.com:${port}`, {
+const socket: Socket = io(`https://sharedrop-t1yn.onrender.com`, {
   transports: ['websocket'],  // Enforce WebSocket connection
   reconnectionAttempts: 5,  // Try to reconnect if the connection drops
   reconnectionDelay: 1000,  // Set reconnection delay (in ms)
