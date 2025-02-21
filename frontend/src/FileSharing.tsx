@@ -130,7 +130,7 @@ const App: React.FC = () => {
       // Cleanup the object URL
       URL.revokeObjectURL(url);
       toast({
-        description: "File downloaded",
+        description: "File received successfully",
         mode: darkMode
        })
       
